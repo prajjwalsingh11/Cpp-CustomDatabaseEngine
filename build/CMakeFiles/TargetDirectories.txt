@@ -1,0 +1,5 @@
+C:/coding/CustomDatabaseEngine/build/CMakeFiles/CustomDatabaseEngine.dir
+C:/coding/CustomDatabaseEngine/build/CMakeFiles/database_engine.dir
+C:/coding/CustomDatabaseEngine/build/CMakeFiles/ALL_BUILD.dir
+C:/coding/CustomDatabaseEngine/build/CMakeFiles/ZERO_CHECK.dir
+C:/coding/CustomDatabaseEngine/build/pybind11/CMakeFiles/ALL_BUILD.dir

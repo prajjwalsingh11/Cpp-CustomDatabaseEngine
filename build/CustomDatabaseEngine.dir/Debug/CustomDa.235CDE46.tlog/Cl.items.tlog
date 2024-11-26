@@ -1,0 +1,5 @@
+C:\coding\CustomDatabaseEngine\src\DatabaseEngine.cpp;C:\coding\CustomDatabaseEngine\build\CustomDatabaseEngine.dir\Debug\DatabaseEngine.obj
+C:\coding\CustomDatabaseEngine\src\StorageEngine.cpp;C:\coding\CustomDatabaseEngine\build\CustomDatabaseEngine.dir\Debug\StorageEngine.obj
+C:\coding\CustomDatabaseEngine\src\QueryProcessor.cpp;C:\coding\CustomDatabaseEngine\build\CustomDatabaseEngine.dir\Debug\QueryProcessor.obj
+C:\coding\CustomDatabaseEngine\src\TransactionManager.cpp;C:\coding\CustomDatabaseEngine\build\CustomDatabaseEngine.dir\Debug\TransactionManager.obj
+C:\coding\CustomDatabaseEngine\src\Indexing.cpp;C:\coding\CustomDatabaseEngine\build\CustomDatabaseEngine.dir\Debug\Indexing.obj
