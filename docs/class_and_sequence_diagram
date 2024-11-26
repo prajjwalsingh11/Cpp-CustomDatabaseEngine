@@ -1,0 +1,24 @@
++------------------+          +------------------+         +--------------------+
+|  DatabaseEngine  | <------> |   StorageEngine  | <-----> |   TransactionManager|
+|------------------|          |------------------|         |--------------------|
+| - queryProcessor |          |  - backend       |         | - currentState     |
+| - transactionMgr |          |                  |         | - transactionData  |
+| - storageEngine  |          +------------------+         | - storageEngine    |
++------------------+                                            +------------------+
+        |
+        v
++-----------------+ 
+|    QueryProcessor|
+|-----------------|
+|  - queries      |
++-----------------+
+
+
+
+Client                DatabaseEngine                TransactionManager
+ |                           |                             |
+ | --- startTransaction() -->|                             |
+ |                           | --- setState(ActiveState) ->|
+ |                           |                             | --- handleTransaction()
+ |                           |                             |
+ |                           |                             |

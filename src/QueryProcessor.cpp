@@ -1,44 +1,32 @@
-// QueryProcessor.h
-//composite pattern
-
-#pragma once
-#include <vector>
-#include <memory>
+#include "QueryProcessor.hpp"
 #include <iostream>
-using namespace std;
 
-class QueryComponent {
-public:
-    virtual void execute() = 0;
-    virtual ~QueryComponent() = default;
-};
+QueryProcessor::QueryProcessor(StorageEngine* engine) : storageEngine(engine) {}
 
-class SelectQuery : public QueryComponent {
-public:
-    void execute() override {
-        cout << "Executing SELECT query" << endl;
+void QueryProcessor::executeQuery(const std::string& query) {
+    std::cout << "Executing query: " << query << std::endl;
+    // Basic query routing (for now, assuming SELECT or INSERT)
+    if (query.find("SELECT") != std::string::npos) {
+        executeSelect(query);
+    } else if (query.find("INSERT") != std::string::npos) {
+        executeInsert(query);
     }
-};
+}
 
-class WhereClause : public QueryComponent {
-public:
-    void execute() override {
-        cout << "Executing WHERE clause" << endl;
+void QueryProcessor::executeSelect(const std::string& query) {
+    std::cout << "Executing SELECT query: " << query << std::endl;
+
+    // Simulate SELECT query (searching an index)
+    std::string column = "name";  // Example column
+    std::string value = "Alice";  // Example value to search
+    auto results = storageEngine->searchIndex(value);
+
+    for (const auto& result : results) {
+        std::cout << "Result: " << result << std::endl;
     }
-};
+}
 
-class QueryProcessor {
-public:
-    void addComponent(shared_ptr<QueryComponent> component) {
-        components.push_back(component);
-    }
-
-    void executeQuery() {
-        for (auto& component : components) {
-            component->execute();
-        }
-    }
-
-private:
-    vector<shared_ptr<QueryComponent>> components;
-};
+void QueryProcessor::executeInsert(const std::string& query) {
+    std::cout << "Executing INSERT query: " << query << std::endl;
+    storageEngine->storeData(query);  // Simulate insert
+}
